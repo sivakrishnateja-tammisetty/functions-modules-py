@@ -1,0 +1,193 @@
+1. CODE REUSING USING FUNCTIONS:
+  *functions ===> write once and call as many times we want.
+  * syntax for function:
+  def function_name:
+    statements
+  functioncall()
+
+
+
+
+def str1():
+    print("siva")
+    print("Krishna")
+    print("Teja")
+str()
+str()
+
+
+
+
+def str_add():
+    a="siva"
+    b="Krishna"
+    c="Teja"
+    print(a+b+c)
+str_add()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. RETURN STATEMENT:
+  *return statement is used to end function call.
+  * return statement should be used inside function only.
+  *statements which are present after return keyword are not executed at all inside function.
+
+ *syntax:
+  def function_name:
+    statements
+    ..........
+    return expression
+  functioncall()
+
+
+
+
+
+
+
+
+
+def add(a,b):
+    print(a+b)
+add(1,3)
+
+
+def add(a,b):
+    return a+b
+ans=add(1,3)
+print(ans)
+
+
+
+def mul(a,b):
+    c= a*b
+    return c
+print(mul(3,2))
+
+
+def mul(a,b):
+    return a*b
+print(mul("Teja ",2))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. PASSING ARGUMENTS TO A FUNCTION:
+
+
+def add1(a):
+    print(a+1)
+add1(2)
+add1(10)
+
+
+
+
+def add2(a,b):
+    print(a+b)
+add2(10,20)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.PASSING FUNCTIONS AS ARGUMENTS:
+
+def add(x,y):
+    return x+y
+def square(z):
+    return z*z
+print(square(add(2,3)))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. MODULES: modules are python files with (.py) extension
+
+  *There are several ways for importing modules in python:
+
+    1st way ==> import modulename
+
+    import math
+    print(math.pi)
+
+
+
+    2nd way ==> from modulename import anyvalue
+
+    from math import pi
+    print(pi)
+
+
+    3rd way ==> from modulename import * 
+    Note: Here * denotes all
+
+    from math import *
+    print(pi)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. RECURSION 1: A  function that calls itself inside it.
+
+
+  * How do we know how many times recursion will call?
+
+      import sys
+      print(sys.getrecursionlimit())    // BY default it will call 1000 times
+
+
+
+  *How to set recursion limit?
+
+    import sys
+    sys.setrecursionlimit(value)
+
+
+
+
+Eg:
+def py():
+    print("Teja")
+    py()
+py()
+
+
+
+
+Eg:factorial prgm
+
+
+def factorial(n):
+    if n<2:
+        return 1;
+    else:
+        return n*factorial(n-1)
+res=factorial(4)
+print(res)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. LOCAL & GLOBAL VARIABLES:
+
+
+  * Local variables ==> which are present inside function(we access within function only).
+  * Global variables ==>which are present outside of the function(we access anywhere in the prgm).
+
+Eg 1:
+n=1
+def change():
+    n=5
+    print("in ",n)
+change()
+print("out ",n)                         o/p: in 5
+                                             out 1
+
+
+
+* but we can change local variable as global using 'global' keyword
+
+
+n=1
+def change():
+    global n
+    n=5
+    print("in ",n)
+change()
+print("out ",n)               o/p: in 5
+                                   out 5
+
+  
